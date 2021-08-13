@@ -1,5 +1,6 @@
 ﻿using Microsoft.Azure.Storage;
 using Microsoft.Azure.Storage.Blob;
+using Microsoft.Azure.Storage.Queue;
 using System.IO;
 using System.IO.Compression;
 using System.Text;
@@ -101,6 +102,18 @@ namespace Frends.Community.Azure
 
             var memStream = new MemoryStream(bytes);
             return memStream;
+        }
+
+        public static CloudQueue GetQueueReference(QueueConnectionProperties connection)
+        {
+            // Parse the connection string and return a reference to the storage account.
+            var storageAccount = CloudStorageAccount.Parse(connection.StorageConnectionString);
+            // create service client
+            var queueClient = storageAccount.CreateCloudQueueClient();
+            // Retrieve a reference to a container.
+            var queue = queueClient.GetQueueReference(connection.QueueName);
+
+            return queue;
         }
     }
 }

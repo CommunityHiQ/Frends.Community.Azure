@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace Frends.Community.Azure.Tests
 {
+    [TestFixture]
+    [Ignore("Unit tests requires Azure Storage Emulator running")]
     public class DownloadBlobsTests
     {
         /// <summary>
         /// Connection string for Azure Storage Emulator
         /// </summary>
-        private readonly string _connectionString = Environment.GetEnvironmentVariable("AZUREBLOBSTORAGE_CONNSTRING");
+        private readonly string _connectionString = "UseDevelopmentStorage=true;";
 
         /// <summary>
         /// Some random file for test purposes

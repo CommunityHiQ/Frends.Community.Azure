@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 
 namespace Frends.Community.Azure.Tests
 {
+    [TestFixture]
+    [Ignore("Unit tests requires Azure Storage Emulator running")]
     public class ListBlobsTests
     {
         /// <summary>
         /// Connection string for Azure Storage Emulator
         /// </summary>
-        private readonly string _connectionString = Environment.GetEnvironmentVariable("AZUREBLOBSTORAGE_CONNSTRING", EnvironmentVariableTarget.User);
+        private readonly string _connectionString = "UseDevelopmentStorage=true;";
 
         /// <summary>
         /// Test blob name

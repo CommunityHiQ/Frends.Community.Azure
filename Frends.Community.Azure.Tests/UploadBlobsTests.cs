@@ -8,20 +8,22 @@ using System.Threading.Tasks;
 
 namespace Frends.Community.Azure.Tests
 {
+    [TestFixture]
+    [Ignore("Unit tests requires Azure Storage Emulator running")]
     public class UploadBlobsTests
     {
         /// <summary>
         /// Connection string for Azure Storage Emulator
         /// </summary>
-        private readonly string _connectionString = Environment.GetEnvironmentVariable("AZUREBLOBSTORAGE_CONNSTRING");
+        private readonly string _connectionString = "UseDevelopmentStorage=true";
 
         /// <summary>
-        ///     Container name for tests
+        /// Container name for tests
         /// </summary>
         private string _containerName;
 
         /// <summary>
-        ///     Some random file for test purposes
+        /// Some random file for test purposes
         /// </summary>
         private readonly string _testFilePath = $@"{AppDomain.CurrentDomain.BaseDirectory}\TestFiles\TestFile.xml";
 
