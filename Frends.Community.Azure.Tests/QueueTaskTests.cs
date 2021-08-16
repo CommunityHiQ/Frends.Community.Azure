@@ -1,8 +1,5 @@
 using Microsoft.Azure.Storage.Queue;
 using NUnit.Framework;
-using System;
-using System.IO;
-using System.Text;
 using System.Threading;
 
 namespace Frends.Community.Azure.Tests

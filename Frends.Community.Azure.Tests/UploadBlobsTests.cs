@@ -2,7 +2,6 @@ using Microsoft.Azure.Storage.Blob;
 using NUnit.Framework;
 using System;
 using System.Globalization;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
